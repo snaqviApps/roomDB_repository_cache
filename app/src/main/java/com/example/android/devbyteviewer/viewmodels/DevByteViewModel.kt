@@ -62,7 +62,7 @@ class DevByteViewModel(application: Application) : AndroidViewModel(application)
     //  We'll replace this code with the repository -- adding offline-Caching
     private val database = getDatabase(application)                 // database
     private val vidoeRepository = VideosRepository(database)        // repository created
-    init {                                                          
+    init {
         viewModelScope.launch {
             vidoeRepository.refreshVideos()
         }
